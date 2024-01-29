@@ -10,7 +10,11 @@
     "type": "git",
     "url": "hhttps://github.com/friwid/bgame.git"
   },
-  "license": "MIT",
+  "license": {
+    "key": "mit",
+    "name": "MIT License",
+    "url":  "https://api.github.com/licenses/mit"
+  },
   "name": "bgame",
   "private": true,
   "version": "0.0.1",
