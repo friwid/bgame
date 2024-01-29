@@ -1,8 +1,22 @@
 {
+  "author": {
+    "name": "Frieder Widmann",
+    "email": "50137120+friwid@users.noreply.github.com",
+    "url": "https://github.com/friwid"
+  },
+  "bugs": "https://github.com/friwid/bgame/issues",
+  "homepage": "https://github.com/friwid/bgame",
+  "repository": {
+    "type": "git",
+    "url": "hhttps://github.com/friwid/bgame.git"
+  },
+  "license": "MIT",
   "name": "bgame",
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "main": "src/main.js",
+  "desciption": "A New Browsergame",
   "scripts": {
     "dev": "bun --bun vite",
     "build": "vite build",
@@ -21,5 +35,8 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",
     "vite": "^5.0.8"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
