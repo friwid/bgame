@@ -1,0 +1,11 @@
+<Files "*.env">
+    Require all denied
+</Files>
+
+<Files ".gitignore">
+    Require all denied
+</Files>
+
+<Files "node_modules">
+    Require all denied
+</Files>
