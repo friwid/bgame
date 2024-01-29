@@ -1,4 +1,4 @@
-<Files "*.env">
+<Files ".env*">
     Require all denied
 </Files>
 
@@ -7,5 +7,17 @@
 </Files>
 
 <Files "node_modules">
+    Require all denied
+</Files>
+
+<Files "config">
+    Require all denied
+</Files>
+
+<Files "*.log">
+    Require all denied
+</Files>
+
+<Files "logs">
     Require all denied
 </Files>
