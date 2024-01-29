@@ -35,5 +35,5 @@ dist-ssr
 .htaccess
 bak
 deploy.sh
-config/db.config.js
+src/config/db.config.js
 /logs/*.log*
