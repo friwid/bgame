@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-//import PageViewer from "./views/PageViewer.vue";
-//import Pages from "./views/Pages.vue";
+import LandingPage from "../views/LandingPage.vue";
+import Register from "../components/Register.vue";
+import Login from "../components/Login.vue";
 
 
 /**
@@ -10,20 +11,9 @@ import { createRouter, createWebHashHistory } from "vue-router";
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
-    /**
-     * Route for viewing a page.
-     * The index parameter is optional.
-     * If provided, it will be passed as a prop to the PageViewer component.
-     */
-/*     { path: "/:index?", component: PageViewer, props: true },
-    { 
-      path: "/pages", 
-      component: Pages,
-      children: [
-        { path: "", component: PagesList },
-        { path: "create", component: CreatePage },
-        { path: ":index/edit", component: PageEdit, props: true }
-      ] }, */
+     { path: "/", component: LandingPage, props: true },
+     { path: "/register", component: Register, props: true },
+     { path: "/login", component: Login, props: true },
   ],
 });
 

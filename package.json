@@ -27,8 +27,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@floating-ui/vue": "^1.0.6",
+    "@fortawesome/fontawesome-free": "^6.5.1",
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "axios": "^1.6.7",
-    "bootstrap": "^5.3.2",
     "core-js": "^3.35.1",
     "express": "^4.18.2",
     "express-validator": "^7.0.1",
@@ -37,7 +39,8 @@
     "pinia": "^2.1.7",
     "sequelize": "^6.35.2",
     "vue": "^3.3.11",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "vuetify": "^3.5.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",
