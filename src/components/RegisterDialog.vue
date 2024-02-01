@@ -73,8 +73,6 @@ const openLoginDialog = () => {
           type="password"
           prepend-inner-icon="fas fa-key"
         ></v-text-field>
-        <!-- TODO: Add :disabled="dialog"
-      :loading="dialog"-->
         <v-btn type="submit" block class="mt-2" color="primary" :disabled="isLoading" :loading="isLoading">Register</v-btn>
       </v-form>
 

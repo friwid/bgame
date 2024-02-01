@@ -47,7 +47,6 @@ const openRegisterDialog = () => {
             variant="plain"
             size="small"
             @click="loginOverlay = false"
-            :ripple="false"
           >
             <v-icon>fas fa-close</v-icon>
           </v-btn>
@@ -75,8 +74,6 @@ const openRegisterDialog = () => {
           label="Remember me"
           hide-details
         ></v-checkbox>
-        <!-- TODO: Add :disabled="dialog"
-      :loading="dialog"-->
         <v-btn type="submit" block class="mt-2" color="primary" :disabled="isLoading" :loading="isLoading">Login</v-btn>
       </v-form>
 
