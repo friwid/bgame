@@ -5,7 +5,7 @@ const loginForm = ref({
   username: "",
   password: "",
   remember: false,
-})
+});
 
 function submit() {
   console.table(loginForm.value);
@@ -48,31 +48,38 @@ const openRegisterDialog = () => {
         </v-toolbar-items>
       </v-toolbar>
 
-      <v-sheet width="400" class="mx-auto mt-5">
-        <v-form @submit.prevent="submit">
-          <v-text-field
-            v-model="loginForm.username"
-            label="Username"
-            type="text"
-            prepend-inner-icon="fas fa-user"
-            autofocus
-          ></v-text-field>
-          <!-- :rules="rules" -->
-          <v-text-field
-            v-model="loginForm.password"
-            label="Password"
-            type="password"
-            prepend-inner-icon="fas fa-key"
-          ></v-text-field>
-          <v-checkbox color="secondary" v-model="loginForm.remember" label="Remember me" hide-details></v-checkbox>
-          <v-btn type="submit" block class="mt-2" color="primary">Login</v-btn>
-          
-        </v-form>
-       
-      </v-sheet>
-      <v-card-actions class="justify-center"><v-btn variant="plain" @click="loginOverlay = false, openRegisterDialog()">No account? Register here</v-btn></v-card-actions>
-    </v-card>
+      <v-form @submit.prevent="submit" fluid class="mx-5 mt-5">
+        <v-text-field
+          v-model="loginForm.username"
+          label="Username"
+          type="text"
+          prepend-inner-icon="fas fa-user"
+          autofocus
+        ></v-text-field>
+        <!-- :rules="rules" -->
+        <v-text-field
+          v-model="loginForm.password"
+          label="Password"
+          type="password"
+          prepend-inner-icon="fas fa-key"
+        ></v-text-field>
+        <v-checkbox
+          color="secondary"
+          v-model="loginForm.remember"
+          label="Remember me"
+          hide-details
+        ></v-checkbox>
+        <v-btn type="submit" block class="mt-2" color="primary">Login</v-btn>
+      </v-form>
 
+      <v-card-actions class="justify-center"
+        ><v-btn
+          variant="plain"
+          @click="(loginOverlay = false), openRegisterDialog()"
+          >No account? Register here</v-btn
+        ></v-card-actions
+      >
+    </v-card>
   </v-dialog>
 </template>
 <style scoped></style>
