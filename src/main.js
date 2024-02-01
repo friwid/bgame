@@ -36,8 +36,8 @@ const vuetify = createVuetify({
       light: {
         dark: false,
         colors: {
-          primary: colors.amber.darken4, // #E53935
-          secondary: colors.amber.lighten1, // #FFCDD2
+          primary: colors.pink.darken4, // #E53935
+          secondary: colors.pink.lighten1, // #FFCDD2
         }
       },
     },
