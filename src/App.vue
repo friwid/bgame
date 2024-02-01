@@ -1,20 +1,20 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
-
+import RegisterDialog from "./components/RegisterDialog.vue";
+import LoginDialog from "./components/LoginDialog.vue";
 </script>
 
 <template>
-  <header>
+  <v-app>
     <Navbar></Navbar>
-  </header>
-
-  <main>
-    <RouterView></RouterView>
-  </main>
-
-  <footer></footer>
-
+    <v-main>
+      <RouterView></RouterView>
+     <!--  <RegisterDialog></RegisterDialog> -->
+      <LoginDialog></LoginDialog>
+    </v-main>
+    <footer></footer>
+  </v-app>
 </template>
 
 <style scoped>

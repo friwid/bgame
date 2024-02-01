@@ -1,7 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import LandingPage from "../views/LandingPage.vue";
-import Register from "../components/Register.vue";
-import Login from "../components/Login.vue";
+import HomeView from "../views/HomeView.vue";
 
 
 /**
@@ -11,9 +9,24 @@ import Login from "../components/Login.vue";
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
-     { path: "/", component: LandingPage, props: true },
-     { path: "/register", component: Register, props: true },
-     { path: "/login", component: Login, props: true },
+    { 
+      path: "/", 
+      name: "home",
+      component: HomeView, 
+      props: true 
+    },
+/*     { 
+      path: "/register",
+      name: "register",
+      component: RegisterView, 
+      props: true 
+    },
+    { 
+      path: "/login",
+      name: "login",
+      component: LoginView, 
+      props: true 
+    }, */
   ],
 });
 

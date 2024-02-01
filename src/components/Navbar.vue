@@ -1,14 +1,40 @@
-<script setup></script>
+<script setup>
+import { inject } from 'vue';
+const bus = inject("$bus");
+
+
+const openLoginDialog = () => {
+  bus.$emit("openLoginDialog");
+};
+
+</script>
 
 <template>
-  <v-toolbar density="compact">
-    <v-btn>
-      <v-icon>fas fa-home fa-beat</v-icon>
+  <v-app-bar density="compact" class="mb-10">
+    <v-btn to="/" size="small" color="primary" :ripple="false" icon>
+      <v-icon>fas fa-home</v-icon>
     </v-btn>
     <v-toolbar-title>Titlee</v-toolbar-title>
     <v-spacer></v-spacer>
-    <v-btn variant="outlined" color="primary" :ripple="false"> Login </v-btn>
-  </v-toolbar>
+    <v-btn
+      variant="outlined"
+      size="small"
+      color="primary"
+      :ripple="false"
+      @click="openLoginDialog()"
+    >
+      Login
+    </v-btn>
+    <v-btn
+      variant="outlined"
+      size="small"
+      color="primary"
+      :ripple="false"
+      class="ml-1"
+    >
+      Register
+    </v-btn>
+  </v-app-bar>
 </template>
 
 <style scoped></style>

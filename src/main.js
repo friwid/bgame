@@ -58,8 +58,6 @@ const isDev =
 
 isDev ? console.table(env) : console.error("--------NOT IN DEV MODE!--------");
 
-console.log("Test: " + env.SERVER_DEBUG);
-
 app.use(router);
 app.use(pinia);
 app.use(vuetify);
