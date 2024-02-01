@@ -7,19 +7,15 @@ const bus = inject("$bus");
 const openLoginDialog = () => {
   bus.$emit("openLoginDialog");
 };
-
 const openRegisterDialog = () => {
   bus.$emit("openRegisterDialog");
 };
 
+// Theme Switcher
 const darkTheme = ref(true);
-const themeIcon = ref("sun")
 const theme = useTheme();
-
 const changeTheme = () => {
   darkTheme.value = !darkTheme.value;
-
-  darkTheme.value ? themeIcon.value = "sun" : themeIcon.value = "moon";
   theme.global.name.value = darkTheme.value ? "dark" : "light";
 }
 </script>
@@ -32,7 +28,7 @@ const changeTheme = () => {
     <v-toolbar-title>Titlee</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-btn icon variant="plain" @click="changeTheme()">
-      <v-icon>fas fa-{{ themeIcon }}</v-icon>
+      <v-icon>fas fa-circle-half-stroke</v-icon>
     </v-btn>
     <v-btn
       variant="outlined"
