@@ -53,6 +53,7 @@ const openLoginDialog = () => {
         </v-toolbar-items>
       </v-toolbar>
       <v-form @submit.prevent="submit" fluid class="mx-5 mt-5">
+        <!-- TODO: hint="" persistent-hint -->
         <v-text-field
           v-model="registerForm.username"
           label="Username"
