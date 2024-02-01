@@ -37,9 +37,17 @@ const vuetify = createVuetify({
     },
   },
   theme: {
+    defaultTheme: "dark",
     themes: {
       light: {
         dark: false,
+        colors: {
+          primary: colors.pink.darken4,
+          secondary: colors.pink.lighten1, 
+        }
+      },
+      dark: {
+        light: false,
         colors: {
           primary: colors.pink.darken4,
           secondary: colors.pink.lighten1, 

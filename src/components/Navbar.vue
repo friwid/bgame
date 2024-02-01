@@ -1,5 +1,6 @@
 <script setup>
-import { inject } from 'vue';
+import { ref, inject } from 'vue';
+import { useTheme } from "vuetify";
 const bus = inject("$bus");
 
 
@@ -11,6 +12,16 @@ const openRegisterDialog = () => {
   bus.$emit("openRegisterDialog");
 };
 
+const darkTheme = ref(true);
+const themeIcon = ref("sun")
+const theme = useTheme();
+
+const changeTheme = () => {
+  darkTheme.value = !darkTheme.value;
+
+  darkTheme.value ? themeIcon.value = "sun" : themeIcon.value = "moon";
+  theme.global.name.value = darkTheme.value ? "dark" : "light";
+}
 </script>
 
 <template>
@@ -20,6 +31,9 @@ const openRegisterDialog = () => {
     </v-btn>
     <v-toolbar-title>Titlee</v-toolbar-title>
     <v-spacer></v-spacer>
+    <v-btn icon variant="plain" @click="changeTheme()">
+      <v-icon>fas fa-{{ themeIcon }}</v-icon>
+    </v-btn>
     <v-btn
       variant="outlined"
       size="small"
