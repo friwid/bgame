@@ -12,11 +12,9 @@ const openRegisterDialog = () => {
 };
 
 // Theme Switcher
-const darkTheme = ref(true);
 const theme = useTheme();
 const changeTheme = () => {
-  darkTheme.value = !darkTheme.value;
-  theme.global.name.value = darkTheme.value ? "dark" : "light";
+  theme.global.name.value = theme.global.name.value === "dark" ? "light" : "dark";
 }
 </script>
 
