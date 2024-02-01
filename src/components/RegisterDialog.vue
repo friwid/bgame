@@ -7,11 +7,17 @@ const registerForm = ref({
   password: "",
 });
 
+const isLoading = ref(false);
+
 function submit() {
+  isLoading.value = true;
   console.table(registerForm.value);
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 2000);
 }
 
-// Listen to openLoginDialog event
+// Listen to registerLoginDialog event
 const bus = inject("$bus");
 let registerOverlay = ref(false);
 
@@ -61,14 +67,16 @@ const openLoginDialog = () => {
           prepend-inner-icon="fas fa-envelope"
           type="email"
         ></v-text-field>
-        <!-- :rules="rules" -->
+        <!-- TODO: :rules="rules" -->
         <v-text-field
           v-model="registerForm.password"
           label="Password"
           type="password"
           prepend-inner-icon="fas fa-key"
         ></v-text-field>
-        <v-btn type="submit" block class="mt-2" color="primary">Register</v-btn>
+        <!-- TODO: Add :disabled="dialog"
+      :loading="dialog"-->
+        <v-btn type="submit" block class="mt-2" color="primary" :disabled="isLoading" :loading="isLoading">Register</v-btn>
       </v-form>
 
       <v-card-actions class="justify-center"

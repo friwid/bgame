@@ -15,7 +15,7 @@ const openRegisterDialog = () => {
 
 <template>
   <v-app-bar density="compact" class="mb-10">
-    <v-btn to="/" size="small" color="primary" :ripple="false" icon>
+    <v-btn to="/" size="small" color="primary" icon>
       <v-icon>fas fa-home</v-icon>
     </v-btn>
     <v-toolbar-title>Titlee</v-toolbar-title>
@@ -30,7 +30,7 @@ const openRegisterDialog = () => {
       Login
     </v-btn>
     <v-btn
-      variant="outlined"
+    variant="flat"
       size="small"
       color="primary"
       :ripple="false"

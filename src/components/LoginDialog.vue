@@ -7,8 +7,14 @@ const loginForm = ref({
   remember: false,
 });
 
+const isLoading = ref(false);
+
 function submit() {
+  isLoading.value = true;
   console.table(loginForm.value);
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 2000);
 }
 
 // Listen to openLoginDialog event
@@ -56,7 +62,7 @@ const openRegisterDialog = () => {
           prepend-inner-icon="fas fa-user"
           autofocus
         ></v-text-field>
-        <!-- :rules="rules" -->
+        <!-- TODO: :rules="rules" -->
         <v-text-field
           v-model="loginForm.password"
           label="Password"
@@ -69,7 +75,9 @@ const openRegisterDialog = () => {
           label="Remember me"
           hide-details
         ></v-checkbox>
-        <v-btn type="submit" block class="mt-2" color="primary">Login</v-btn>
+        <!-- TODO: Add :disabled="dialog"
+      :loading="dialog"-->
+        <v-btn type="submit" block class="mt-2" color="primary" :disabled="isLoading" :loading="isLoading">Login</v-btn>
       </v-form>
 
       <v-card-actions class="justify-center"

@@ -21,6 +21,11 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import { aliases, fa } from 'vuetify/iconsets/fa'
 
 const vuetify = createVuetify({
+  defaults: {
+    global: {
+      ripple: false,
+    },
+  },
   components,
   directives,
   styles,
@@ -36,8 +41,8 @@ const vuetify = createVuetify({
       light: {
         dark: false,
         colors: {
-          primary: colors.pink.darken4, // #E53935
-          secondary: colors.pink.lighten1, // #FFCDD2
+          primary: colors.pink.darken4,
+          secondary: colors.pink.lighten1, 
         }
       },
     },
