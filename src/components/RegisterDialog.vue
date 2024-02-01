@@ -47,7 +47,6 @@ const openLoginDialog = () => {
             variant="plain"
             size="small"
             @click="registerOverlay = false"
-            :ripple="false"
           >
             <v-icon>fas fa-close</v-icon>
           </v-btn>
