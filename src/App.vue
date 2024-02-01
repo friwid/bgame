@@ -10,7 +10,7 @@ import LoginDialog from "./components/LoginDialog.vue";
     <Navbar></Navbar>
     <v-main>
       <RouterView></RouterView>
-     <!--  <RegisterDialog></RegisterDialog> -->
+      <RegisterDialog></RegisterDialog>
       <LoginDialog></LoginDialog>
     </v-main>
     <footer></footer>

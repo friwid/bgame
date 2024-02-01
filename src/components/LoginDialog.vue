@@ -18,6 +18,10 @@ let loginOverlay = ref(false);
 bus.$on("openLoginDialog", () => {
   loginOverlay.value = true;
 });
+
+const openRegisterDialog = () => {
+  bus.$emit("openRegisterDialog");
+};
 </script>
 
 <template>
@@ -49,6 +53,7 @@ bus.$on("openLoginDialog", () => {
           <v-text-field
             v-model="loginForm.username"
             label="Username"
+            type="text"
             prepend-inner-icon="fas fa-user"
             autofocus
           ></v-text-field>
@@ -60,12 +65,12 @@ bus.$on("openLoginDialog", () => {
             prepend-inner-icon="fas fa-key"
           ></v-text-field>
           <v-checkbox color="secondary" v-model="loginForm.remember" label="Remember me" hide-details></v-checkbox>
-          <v-btn type="submit" block class="mt-2" color="primary">Submit</v-btn>
+          <v-btn type="submit" block class="mt-2" color="primary">Login</v-btn>
           
         </v-form>
        
       </v-sheet>
-      <v-card-actions class="justify-center"><v-btn variant="plain">No account? Register here</v-btn></v-card-actions>
+      <v-card-actions class="justify-center"><v-btn variant="plain" @click="loginOverlay = false, openRegisterDialog()">No account? Register here</v-btn></v-card-actions>
     </v-card>
 
   </v-dialog>

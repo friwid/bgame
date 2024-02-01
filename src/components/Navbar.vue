@@ -7,6 +7,10 @@ const openLoginDialog = () => {
   bus.$emit("openLoginDialog");
 };
 
+const openRegisterDialog = () => {
+  bus.$emit("openRegisterDialog");
+};
+
 </script>
 
 <template>
@@ -31,6 +35,7 @@ const openLoginDialog = () => {
       color="primary"
       :ripple="false"
       class="ml-1"
+      @click="openRegisterDialog()"
     >
       Register
     </v-btn>
