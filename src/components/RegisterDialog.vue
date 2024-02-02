@@ -29,10 +29,10 @@ const rules = {
   countPassword: (value) => value.length >= 8 || "Min 8 characters.",
   charsPassword: (value) => {
     const passwordPattern =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~])[A-Za-z\d!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]{8,}$/;
     return (
       passwordPattern.test(value) ||
-      "Needs 1 lowercase, 1 uppercase, 1 number, and 1 special character."
+      "Needs at least 1 of each: a-z, A-Z, 0-9 and one of these special characters: !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
     );
   },
   email: (value) => {
