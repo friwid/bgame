@@ -1,8 +1,8 @@
 # A new Browsergame
 
-Languages: HTML, CSS, JavaScript, SQL.
+Lang: HTML, CSS, JavaScript, SQL.
 
-Tools, Libraries, Frameworks: Bun, Vite, Vue, Vuetify, Fastify, MariaDB
+Tech: Bun, Vite, Vue, Vuetify, Fastify, MariaDB
 
 ## Goals
 
