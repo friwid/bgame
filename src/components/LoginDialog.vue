@@ -1,5 +1,8 @@
 <script setup>
 import { ref, inject } from "vue";
+import { useDisplay } from 'vuetify'
+
+const { mobile } = useDisplay()
 
 const loginForm = ref({
   username: "",
@@ -45,6 +48,7 @@ const openRegisterDialog = () => {
     persistent
     no-click-animation
     class="align-center justify-center"
+    :fullscreen="mobile"
   >
     <v-card width="450" class="mx-auto">
       <v-toolbar>
