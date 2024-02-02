@@ -18,7 +18,7 @@ const changeTheme = () => {
     <v-btn to="/" size="small" color="primary" icon>
       <v-icon>fas fa-home</v-icon>
     </v-btn>
-    <v-toolbar-title>Titlee</v-toolbar-title>
+    <v-toolbar-title>🚀</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-btn icon variant="plain" @click="changeTheme()">
       <v-icon>fas fa-circle-half-stroke</v-icon>
