@@ -2,7 +2,7 @@
 
 Languages: HTML, CSS, JavaScript, SQL.
 
-Tools, Libraries, Frameworks: Bun, Vite, Vue, Veutify, Fastify
+Tools, Libraries, Frameworks: Bun, Vite, Vue, Vuetify, Fastify, MariaDB
 
 ## Goals
 
