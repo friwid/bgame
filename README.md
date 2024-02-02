@@ -1,5 +1,11 @@
 # A new Browsergame
 
-Languages: Javascript, HTML, CSS, SQL.
+Lang: HTML, CSS, JavaScript, SQL.
 
-Technologies: Bun, Vite, Vue, Bootstrap, Express
+Tech: Bun, Vite, Vue, Vuetify, Fastify, MariaDB
+
+## Goals
+
+The goals of this project are to learn new cool stuff, deepen web dev knowledge and on the way creating an awesome browser game!
+
+Learning by doing.
