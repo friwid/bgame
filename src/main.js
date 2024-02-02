@@ -2,9 +2,10 @@ import { createApp } from "vue";
 import App from "./App.vue";
 
 import "./main.css";
-
+import { RouterLink, RouterView } from "vue-router";
 import $bus from "./utils/events.js";
 import $pages from "./data.js";
+import $localStorage from "./utils/localStorage.js";
 //import axios from "axios";
 //floating-ui
 import { createPinia } from "pinia";
@@ -77,5 +78,6 @@ app.use(vuetify);
 
 app.provide("$bus", $bus);
 app.provide("$pages", $pages);
+app.provide("$localStorage", $localStorage);
 
 app.mount("#app");

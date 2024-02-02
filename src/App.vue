@@ -1,8 +1,25 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
 import RegisterDialog from "./components/RegisterDialog.vue";
 import LoginDialog from "./components/LoginDialog.vue";
+import { ref, inject } from "vue";
+import { useTheme } from "vuetify";
+
+const bus = inject("$bus");
+const localStorage = inject("$localStorage");
+
+// Get and set theme in localStorage
+const theme = useTheme();
+const getTheme = ref(
+  localStorage.$getItem("theme")
+    ? (theme.global.name.value = localStorage.$getItem("theme"))
+    : theme.global.name.value
+);
+bus.$on("changeTheme", () => {
+  theme.global.name.value =
+    theme.global.name.value === "dark" ? "light" : "dark";
+  localStorage.$setItem("theme", theme.global.name.value);
+});
 </script>
 
 <template>

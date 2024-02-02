@@ -1,21 +1,16 @@
 <script setup>
-import { ref, inject } from 'vue';
-import { useTheme } from "vuetify";
+import { ref, inject } from "vue";
+
 const bus = inject("$bus");
-
-
 const openLoginDialog = () => {
   bus.$emit("openLoginDialog");
 };
 const openRegisterDialog = () => {
   bus.$emit("openRegisterDialog");
 };
-
-// Theme Switcher
-const theme = useTheme();
 const changeTheme = () => {
-  theme.global.name.value = theme.global.name.value === "dark" ? "light" : "dark";
-}
+  bus.$emit("changeTheme");
+};
 </script>
 
 <template>
@@ -38,7 +33,7 @@ const changeTheme = () => {
       Login
     </v-btn>
     <v-btn
-    variant="flat"
+      variant="flat"
       size="small"
       color="primary"
       :ripple="false"
