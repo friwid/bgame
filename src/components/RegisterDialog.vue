@@ -18,6 +18,7 @@ function submit() {
 }
 
 //Rules
+const valid = ref(false);
 const rules = {
   required: (value) => !!value || "Required.",
   countUsername: (value) =>
@@ -77,7 +78,7 @@ const openLoginDialog = () => {
           </v-btn>
         </v-toolbar-items>
       </v-toolbar>
-      <v-form @submit.prevent="submit" fluid class="mx-5 mt-5">
+      <v-form @submit.prevent="submit" v-model="valid" fluid class="mx-5 mt-5">
         <!-- TODO: hint="" persistent-hint -->
         <v-text-field
           v-model="registerForm.username"
