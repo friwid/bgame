@@ -86,7 +86,7 @@ const openRegisterDialog = () => {
         <v-checkbox
           color="secondary"
           v-model="loginForm.remember"
-          label="Remember me"
+          label="Remember me."
           hide-details
         ></v-checkbox>
         <v-btn

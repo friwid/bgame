@@ -106,6 +106,13 @@ const openLoginDialog = () => {
           prepend-inner-icon="fas fa-key"
           :rules="[rules.required, rules.countPassword, rules.charsPassword]"
         ></v-text-field>
+        <v-checkbox
+          color="secondary"
+          v-model="registerForm.terms"
+          label="I have read and accept the terms and conditions."
+          :rules="[rules.required]"
+          hide-details
+        ></v-checkbox>
         <v-btn
           type="submit"
           block
