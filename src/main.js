@@ -85,7 +85,7 @@ const isDev =
 isDev ? console.table(env) : console.error("--------NOT IN DEV MODE!--------");
 
 app.use(router);
-app.use(pinia);
+app.use(createPinia());
 app.use(vuetify);
 
 app.provide("$bus", $bus);
