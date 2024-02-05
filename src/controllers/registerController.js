@@ -1,6 +1,6 @@
 import { useRegisterStore } from "./stores/register";
 
-export const RegisterController = {
+export const useRegisterController = {
   setup() {
     const { register, isRegistered } = useRegisterStore("register");
 

@@ -1,6 +1,9 @@
 <script setup>
 import { ref, inject } from "vue";
-import { useDisplay } from 'vuetify'
+import { useDisplay } from 'vuetify';
+import { useLoginController } from "./controllers/LoginController.js";
+
+const { email, password, login, isLoggedIn, status, error } = useLoginController();
 
 const { mobile } = useDisplay()
 

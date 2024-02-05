@@ -1,6 +1,6 @@
 import { useLoginStore } from "./stores/login";
 
-export const LoginController = {
+export const useLoginController = {
   setup() {
     const { login } = useLoginStore();
 

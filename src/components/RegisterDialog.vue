@@ -1,6 +1,9 @@
 <script setup>
 import { ref, inject } from "vue";
-import { useDisplay } from 'vuetify'
+import { useDisplay } from 'vuetify';
+import { useRegisterController } from "./controllers/RegisterController.js";
+
+const { username, email, password, status, error } = useRegisterController();
 
 const { mobile } = useDisplay()
 
