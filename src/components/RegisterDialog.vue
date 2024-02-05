@@ -83,7 +83,6 @@ const openLoginDialog = () => {
         </v-toolbar-items>
       </v-toolbar>
       <v-form @submit.prevent="submit" v-model="valid" fluid class="mx-5 mt-5">
-        <!-- TODO: hint="" persistent-hint -->
         <v-text-field
           v-model="registerForm.username"
           label="Username"
@@ -99,6 +98,7 @@ const openLoginDialog = () => {
           prepend-inner-icon="fas fa-envelope"
           :rules="[rules.required, rules.email]"
         ></v-text-field>
+        <!-- TODO: Add hint="" persistent-hint for information how the password should be-->
         <v-text-field
           v-model="registerForm.password"
           label="Password"

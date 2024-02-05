@@ -75,7 +75,6 @@ const openRegisterDialog = () => {
           :rules="[rules.required, rules.countUsername]"
           autofocus
         ></v-text-field>
-        <!-- TODO: :rules="rules" -->
         <v-text-field
           v-model="loginForm.password"
           label="Password"
