@@ -16,7 +16,7 @@ export const login = async (e, formData) => {
   const isRememberMe = formData.isRememberMe;
 
   try {
-    const resp = await authFetch.post("/", {
+    const resp = await authFetch.post("/login", {
       username,
       password,
       isRememberMe,
@@ -27,5 +27,22 @@ export const login = async (e, formData) => {
   }
 };
 
-// const { username, email, password, status, error } = useRegisterController();
-// const { email, password, login, isLoggedIn, status, error } = useLoginController();
+export const register = async (e, formData) => {
+  const username = formData.username;
+  const email = formData.email;
+  const password = formData.password;
+  const isTerms = formData.isTerms;
+
+  try {
+    const resp = await authFetch.post("/register", {
+      username,
+      email,
+      password,
+      isTerms,
+    });
+    console.log("api.js resp.data: " + resp.data);
+  } catch (error) {
+    console.error(error);
+  }
+};
+

@@ -12,13 +12,18 @@ const registerForm = ref({
 
 const isLoading = ref(false);
 
-function submit() {
+// Handle submitted form data, send it to axios API
+const handleSubmit = (e) => {
+  e.preventDefault();
   isLoading.value = true;
-  console.table(registerForm.value);
+  console.log("RegisterDialog.vue registerForum.value: ");
+  console.table(lregisterForm.value);
   setTimeout(() => {
     isLoading.value = false;
   }, 2000);
-}
+
+  login(e, registerForm.value);
+};
 
 //Rules
 const valid = ref(false);
@@ -82,7 +87,7 @@ const openLoginDialog = () => {
           </v-btn>
         </v-toolbar-items>
       </v-toolbar>
-      <v-form @submit.prevent="submit" v-model="valid" fluid class="mx-5 mt-5">
+      <v-form @submit.prevent="handleSubmit" v-model="valid" fluid class="mx-5 mt-5">
         <v-text-field
           v-model="registerForm.username"
           label="Username"
@@ -108,7 +113,7 @@ const openLoginDialog = () => {
         ></v-text-field>
         <v-checkbox
           color="secondary"
-          v-model="registerForm.terms"
+          v-model="registerForm.isTerms"
           label="I have read and accept the terms and conditions."
           :rules="[rules.required]"
           hide-details
