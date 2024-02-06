@@ -1,3 +1,5 @@
+/* This code is probably obsolete */
+
 import { defineStore } from "pinia";
 import axios from "axios";
 

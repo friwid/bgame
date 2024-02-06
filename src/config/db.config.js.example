@@ -1,9 +1,9 @@
 const config = {
-  host: "localhost",
-  port: 3306,
-  user: "username",
-  password: "password",
-  database: "database_name",
+  host: import.meta.env.DB_HOST,
+  port: import.meta.env.DB_PORT,
+  user: import.meta.env.DB_USER,
+  password: import.meta.env.DB_PASS,
+  database: import.meta.env.DB_NAME,
 };
 
 export default config;

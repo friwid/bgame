@@ -1,29 +1,33 @@
 <script setup>
 import { ref, inject } from "vue";
-import { useDisplay } from 'vuetify';
-import { useLoginController } from "./controllers/LoginController.js";
+import { useDisplay } from "vuetify";
+import { login } from "../api/api.js";
 
-const { email, password, login, isLoggedIn, status, error } = useLoginController();
-
-const { mobile } = useDisplay()
+const { mobile } = useDisplay();
 
 const loginForm = ref({
   username: "",
   password: "",
-  remember: false,
+  isRememberMe: false,
 });
 
 const isLoading = ref(false);
 
-function submit() {
+
+// Handle submitted form data, send it to axios API
+const handleSubmit = (e) => {
+  e.preventDefault();
   isLoading.value = true;
+  console.log("LoginDialog.vue loginForum.value: ");
   console.table(loginForm.value);
   setTimeout(() => {
     isLoading.value = false;
   }, 2000);
-}
 
-//Rules
+  login(e, loginForm.value);
+};
+
+// Rules for form validity
 const valid = ref(false);
 const rules = {
   required: (value) => !!value || "Required.",
@@ -32,9 +36,9 @@ const rules = {
   countPassword: (value) => value.length >= 8 || "Min 8 characters.",
 };
 
-// Listen to openLoginDialog event
+// Listen to events to open dialogs
 const bus = inject("$bus");
-let loginOverlay = ref(false);
+const loginOverlay = ref(false);
 
 bus.$on("openLoginDialog", () => {
   loginOverlay.value = true;
@@ -69,7 +73,7 @@ const openRegisterDialog = () => {
         </v-toolbar-items>
       </v-toolbar>
 
-      <v-form @submit.prevent="submit" v-model="valid" fluid class="mx-5 mt-5">
+      <v-form @submit.prevent="handleSubmit" v-model="valid" fluid class="mx-5 mt-5">
         <v-text-field
           v-model="loginForm.username"
           label="Username"
@@ -87,7 +91,7 @@ const openRegisterDialog = () => {
         ></v-text-field>
         <v-checkbox
           color="secondary"
-          v-model="loginForm.remember"
+          v-model="loginForm.isRememberMe"
           label="Remember me."
           hide-details
         ></v-checkbox>

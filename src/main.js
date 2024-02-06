@@ -73,15 +73,15 @@ const pinia = createPinia();
 
 const app = createApp(App);
 
-const env = import.meta.env;
+const ENV = import.meta.env;
 const isDev =
-  env.DEV &&
-  !env.PROD &&
-  env.MODE === "development" &&
-  env.VITE_USER_NODE_ENV === "development" &&
-  env.VITE_ENV_DEBUG === ".env.development";
+ENV.DEV &&
+  !ENV.PROD &&
+  ENV.MODE === "development" &&
+  ENV.VITE_USER_NODE_ENV === "development" &&
+  ENV.VITE_ENV_DEBUG === ".env.development";
 
-isDev ? console.table(env) : console.error("--------NOT IN DEV MODE!--------");
+isDev ? console.table(ENV) : console.error("--------NOT IN DEV MODE!--------");
 
 app.use(router);
 app.use(createPinia());

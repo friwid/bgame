@@ -1,4 +1,4 @@
-import { useRegisterStore } from "./stores/register";
+import { useAuthStore } from "../stores/authStore.js";
 
 export const useRegisterController = {
   setup() {
