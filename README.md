@@ -1,8 +1,8 @@
----- 09.02.2024 ----------------------------------------------
-This repositofy is now deprecated.
-New repositories have been crated to continue this project.
---------------------------------------------------------------
+____________________________________________________________
+<b>09.02.2024: This repositofy is now deprecated. 
 
+New repositories have been created to continue this project.</b>
+____________________________________________________________
 # A new Browsergame
 
 Lang: HTML, CSS, JavaScript
